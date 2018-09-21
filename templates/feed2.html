@@ -1,0 +1,180 @@
+{% extends 'base.html' %}
+
+<html>
+<body>
+  {% block body %}
+<div class="container">
+	<div class="row">
+		<div class="col-sm-3">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<a href="#"><img src="/static/groupblue.jpg" width="225" height="100"></a>
+					<div class="row">
+						<div class="col-xs-3">
+							<h5>
+								<small>WUPHFS</small>
+								<a href="#">1,545</a>
+							</h5>
+						</div>
+						<div class="col-xs-4">
+							<h5>
+								<small>FOLLOWING</small>
+								<a href="#">251</a>
+							</h5>
+						</div>
+						<div class="col-xs-5">
+							<h5>
+								<small>FOLLOWERS</small>
+								<a href="#">153</a>
+							</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-default panel-custom">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						Trends
+					</h3>
+				</div>
+				<div class="panel-body">
+					<ul class="list-unstyled">
+						<li><a href="#">#FUT</a></li>
+						<li><a href="#">#ABH</a></li>
+						<li><a href="#">#OHHHHREALLYY</a></li>
+						<li><a href="#">#HNB</a></li>
+						<li><a href="#">#KM</a></li>
+						<li><a href="#">#MERKED</a></li>
+						<li><a href="#">#CRACKERS</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<div class="media">
+						<a class="media-left" href="#fake">
+							<img src="/static/www.png" class="img-circle" width="85" height="40">
+						</a>
+						<div class="media-body">
+							<div class="form-group has-feedback">
+								<label class="control-label sr-only" for="inputSuccess5">Hidden label</label>
+								<input type="text" class="form-control" id="search2" aria-describedby="search">
+								<span class="glyphicon glyphicon-camera form-control-feedback" aria-hidden="true"></span>
+								<span id="search2" class="sr-only">(success)</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="panel-body">
+          {% for post in singlepost %}
+					<div class="media">
+						<a class="media-left" href="#fake">
+							<img src="/static/avatar.jpg" class="img-circle" width="40" height="40">
+						</a>
+						<div class="media-body">
+							<h4 class="media-heading">{{post.posted_by}}</h4>
+							<p>{{post.post_content}}</p>
+							<ul class="nav nav-pills nav-pills-custom">
+								<li><a href="#"><span class="glyphicon glyphicon-share-alt"></span></a></li>
+								<li><a href="#"><span class="glyphicon glyphicon-retweet"></span></a></li>
+								<li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+								<li><a href="#"><span class="glyphicon glyphicon-option-horizontal"></span></a></li>
+							</ul>
+						</div>
+					</div>
+          {% endfor %}
+          <div class="media">
+            <div class="media-body">
+            </div>
+          </div>
+          <div class="media">
+            <div class="media-body">
+            </div>
+          </div>
+          <div class="media">
+            <div class="media-body">
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+			<br>
+			<br>
+			<br>
+
+
+			<div class="panel panel-default">
+				<div class="panel-heading">Menu</div>
+				<div class="panel-body">
+					<ul class="nav nav-pills">
+						<li role="presentation" class="active"><a href="/feed">Home</a></li>
+						<li role="presentation"><a href="{{  url_for('user_profile', user_id = current_user.id) }}">Profile</a></li>
+						<li role="presentation"><a href="/user_list">Users</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-3">
+			<div class="panel panel-default panel-custom">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						Who to follow
+						<small><a onclick="window.location.href=this" href="/feed" >Refresh</a> ● <a href="/user_list">View all</a></small>
+					</h3>
+				</div>
+				<div class="panel-body">
+          {% for singleuser in userD %}
+					<div class="media">
+						<div class="media-left">
+							<img src="/static/avatar.jpg" class="img-circle" width="40" height="40">
+						</div>
+						<div class="media-body">
+							<h4 class="media-heading">{{singleuser.username}}</h4>
+							<a href="#" class="btn btn-default btn-xs">
+								+
+								<span class="glyphicon glyphicon-user"></span>
+								Follow
+							</a>
+						</div>
+					</div>
+          {% endfor %}
+				</div>
+				<div class="panel-footer">
+					<a href="www.google.com">
+						<span class="glyphicon glyphicon-user"></span>
+						Find people you know
+					</a>
+				</div>
+			</div>
+			<div class="well well-sm">
+				<ul class="list-inline">
+					<li>© 2018 WUPHF</li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Help</a></li>
+					<li><a href="#">Terms</a></li>
+					<li><a href="#">Privacy</a></li>
+					<li><a href="#">Cookies</a></li>
+					<li><a href="#">Ads info</a></li>
+					<li><a href="#">Brand</a></li>
+					<li><a href="#">Blog</a></li>
+					<li><a href="#">Status</a></li>
+					<li><a href="#">Apps</a></li>
+					<li><a href="#">Jobs</a></li>
+					<li><a href="#">Advertise</a></li>
+					<li><a href="#">Businesses</a></li>
+					<li><a href="#">Media</a></li>
+					<li><a href="#">Developers</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+</body>
+</html>

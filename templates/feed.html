@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+<html>
+
+<head></head>
+
+  <body>
+    {% block body %}
+    <div class="col-md-6">
+      <div class="panel panel-primary">
+        {% for post in singlepost %}
+        <div class="panel-heading">
+
+        </div>
+        <div class="panel-body">
+          <div class="col-md-2">
+            <b>{{post.posted_by}}</b>
+          </div>
+          <div class="col-md-10">
+          </br>
+            <p> - {{post.post_content}}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endblock %}
+  </body>
+
+</html>

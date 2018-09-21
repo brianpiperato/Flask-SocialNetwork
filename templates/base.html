@@ -1,0 +1,38 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/stylesheet.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+  <body>
+    <div class="navbar navbar-default navbar-static-top">
+    	<div class="container">
+    		<div class="navbar-collapse navbar-collapse-1 collapse" aria-expanded="true">
+    			<ul class="nav nav-tabs nav-justified">
+            <li>
+              <img src="/static/www.png" class="img-circle" width="85" height="40">
+            </li>
+    				<li>
+    					<a href="/feed2"><span class="glyphicon glyphicon-home"></span> Home</a>
+    				</li>
+    				<li>
+    					<a href="/user_list"><span class="glyphicon glyphicon-globe"></span> Users</a>
+    				</li>
+    				<li>
+    					<a href="{{  url_for('user_profile', user_id = current_user.id) }}"><span class="glyphicon glyphicon-user"></span> Profile</a>
+    				</li>
+            <li>
+                <a href = "/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
+            </li>
+            </ul>
+    	  </div>
+      </div>
+    </div>
+    {% block body %}
+    {% endblock %}
+  </body>
+
+</html>

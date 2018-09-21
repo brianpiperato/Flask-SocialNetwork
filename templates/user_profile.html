@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+<html>
+
+  <head></head>
+
+  <body>
+  {% block body %}
+    <div class="container">
+      <div class="panel panel-primary">
+        <div class="panel-body">
+          <div class="pull-right">
+            <a href="#">
+            <button class="btn btn-warning"><i class="glyphicon glyphicon-wrench"></i> Edit Profile</button>
+          </a>
+          </div>
+          <div class="row">
+              <div class="col-md-4">
+                <img src="/static/avatar.jpg" class="img-circle" width="125" height="125">
+              </div>
+              <div class="col-md-8">
+                  <h2>{{oneUser.username}}</h2>
+                  <p>{{oneUser.location}}</p>
+                </br>
+                </br>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+    </div>
+    <div class="container">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <div class="media">
+              <img src="/static/www.png" class="img-circle" width="85" height="40">
+            <div class="media-body">
+              <div class="form-group has-feedback">
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body">
+            {% for profile_user_post in user_posts %}
+          <div class="media">
+            <a class="media-left" href="#fake">
+              <img src="/static/avatar.jpg" class="img-circle" width="40" height="40">
+            </a>
+            <div class="media-body">
+
+              <p>{{profile_user_post.post_content}}</p>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+        {% endblock %}
+  </body>
+</html>

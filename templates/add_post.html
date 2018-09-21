@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+<html>
+
+<head></head>
+
+  <body>
+    {% block body %}
+    <h1> Welcome {{ live_user.email }}</h2>
+    <form method="post" action="add_post">
+      <label>Enter post here</label>
+      <input id="pcontent" type="text" name="pcontent"/>
+      <input id="pemail" type="hidden" name="pemail" value="{{live_user.email}}"/>
+      <input type="submit"/>
+
+
+    </form>
+    {% endblock %}
+  </body>
+
+</html>
