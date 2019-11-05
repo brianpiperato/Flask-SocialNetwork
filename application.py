@@ -9,14 +9,6 @@ from flask_admin import Admin, AdminIndexView
 from flask_admin.contrib.sqla import ModelView
 
 
-USERNAME = "bpiperato"
-PASSWORD = "Patricia12"
-ACCOUNT = "mx86048.us-east-1"
-SCHEMA = "PUBLIC"
-WAREHOUSE = "BP_WAREHOUSE"
-DATABASE = "FLASK_SOCIAL"
-
-
 application = Flask(__name__)
 admin = Admin(application)
 application.config['SQLALCHEMY_DATABASE_URI'] = 'snowflake://{user}:{password}@{account}/{database}/{schema}'.format(
